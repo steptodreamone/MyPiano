@@ -595,9 +595,7 @@ public class Piano extends JFrame implements KeyListener {
 
     // 显示更新及关于界面
     public void showDialog() {
-        String date = "2021-09-30";
         JOptionPane.showMessageDialog(Piano.this,
-                "当前版本：" + Start.getNewVersion() + "  （" + date +"）\n\n" +
                         "更新说明:\n" +
                         "1、新增小键盘处对应倍高音按键，修改音符可视化组件相应快捷键\n" +
                         "2、新增新建自制简谱界面双击文本域打开文件的功能\n" +
@@ -609,9 +607,7 @@ public class Piano extends JFrame implements KeyListener {
                         "8、新增新建自制简谱界面的编辑辅助功能\n" +
                         "9、优化音符解析模块\n" +
                         "10、新增音符数量显示\n" +
-                        "注：仅自动显示一次，后续可在帮助菜单栏中再次打开\n" +
-                        "\n如您发现了bug或者有更好的修改建议，敬请反馈\n" +
-                        "技术支持QQ：1452682437",
+                        "注：仅自动显示一次，后续可在帮助菜单栏中再次打开\n",
                 "关于此软件", JOptionPane.INFORMATION_MESSAGE);
         if (file.exists()) {
             try {
@@ -3140,7 +3136,7 @@ public class Piano extends JFrame implements KeyListener {
                         String read_new = new String(ch);
                         if (newNotes.getTextSize() != 0)
                             read_new = read.replaceAll(read_new.substring
-                                                    (read.indexOf("size = ") + "size = ".length(),
+                                            (read.indexOf("size = ") + "size = ".length(),
                                                     read.indexOf("\n", read.indexOf("size = ") + "size = ".length())),
                                     String.valueOf(newNotes.getTextSize()));
                         FileOutputStream fos = new FileOutputStream(file);
